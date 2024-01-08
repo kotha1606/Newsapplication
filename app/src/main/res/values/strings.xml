@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Project005</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fab">FAB</string>
+    <string name="favourites">Favourites.</string>
+    <string name="no_internet">No Internet</string>
+    <string name="retry">Retry</string>
+    <string name="headlines">Headlines</string>
+    <string name="search">Search</string>
+    <string name="search_news">Search news...</string>
+</resources>
