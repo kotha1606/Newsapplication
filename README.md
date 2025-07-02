@@ -16,7 +16,7 @@ A full-stack phone book application built with Spring Boot backend, Angular fron
 - **Backend**: Spring Boot 3.2.1, Spring Security, Spring Data JPA
 - **Frontend**: Angular (latest version)
 - **Database**: Oracle Database
-- **Build Tool**: Gradle
+- **Build Tool**: Maven
 - **Authentication**: JWT tokens
 
 ## Getting Started
@@ -25,12 +25,12 @@ A full-stack phone book application built with Spring Boot backend, Angular fron
 - Java 17 or higher
 - Node.js and npm
 - Oracle Database
-- Gradle
+- Maven (or use the included Maven wrapper)
 
 ### Backend Setup
 1. Clone the repository
 2. Configure Oracle database connection in `application.properties`
-3. Run `./gradlew bootRun`
+3. Run `./mvnw spring-boot:run` (Unix/Linux/Mac) or `mvnw.cmd spring-boot:run` (Windows)
 
 ### Frontend Setup
 1. Navigate to the frontend directory
@@ -45,3 +45,34 @@ A full-stack phone book application built with Spring Boot backend, Angular fron
 - `POST /api/contacts` - Create new contact
 - `PUT /api/contacts/{id}` - Update contact
 - `DELETE /api/contacts/{id}` - Delete contact
+
+## Maven Commands
+
+- `./mvnw clean compile` - Clean and compile the project
+- `./mvnw test` - Run tests
+- `./mvnw spring-boot:run` - Run the application
+- `./mvnw package` - Package the application as JAR
+- `./mvnw clean install` - Clean, compile, test, and install
+
+## Project Structure
+
+```
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/phonebook/
+│   │   │       ├── PhonebookApplication.java
+│   │   │       ├── config/
+│   │   │       ├── controller/
+│   │   │       ├── dto/
+│   │   │       ├── entity/
+│   │   │       ├── repository/
+│   │   │       └── service/
+│   │   └── resources/
+│   └── test/
+├── frontend/
+├── pom.xml
+├── mvnw
+├── mvnw.cmd
+└── README.md
+```
