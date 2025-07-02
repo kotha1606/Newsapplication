@@ -1,0 +1,20 @@
+<nav class="navbar" *ngIf="isAuthenticated">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <h2>📞 Phone Book</h2>
+    </div>
+    
+    <div class="navbar-menu">
+      <div class="navbar-links">
+        <a routerLink="/contacts" routerLinkActive="active">Contacts</a>
+      </div>
+      
+      <div class="navbar-user">
+        <span class="user-info" *ngIf="currentUser">
+          Welcome, {{ currentUser.firstName }} {{ currentUser.lastName }}
+        </span>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>

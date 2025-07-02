@@ -1,0 +1,50 @@
+<div class="contacts-container">
+  <div class="contacts-header">
+    <h1>📞 My Contacts</h1>
+    
+    <div class="search-section">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        (input)="searchContacts()"
+        placeholder="Search contacts..." 
+        class="search-input"
+      />
+      <button (click)="addNewContact()" class="btn btn-primary">
+        ➕ Add Contact
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    Loading contacts...
+  </div>
+
+  <div class="contacts-grid" *ngIf="!isLoading">
+    <div *ngFor="let contact of contacts" class="contact-card">
+      <div class="contact-info">
+        <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
+        <p>📞 {{ contact.phoneNumber }}</p>
+        <p *ngIf="contact.email">📧 {{ contact.email }}</p>
+        <p *ngIf="contact.company">🏢 {{ contact.company }}</p>
+      </div>
+      
+      <div class="contact-actions">
+        <button (click)="editContact(contact)" class="btn btn-edit">
+          ✏️ Edit
+        </button>
+        <button (click)="deleteContact(contact)" class="btn btn-delete">
+          🗑️ Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && contacts.length === 0" class="no-contacts">
+    <p>No contacts found. Add your first contact!</p>
+  </div>
+</div>
